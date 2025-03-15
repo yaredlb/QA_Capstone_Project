@@ -1,3 +1,4 @@
+require("dotenv").config(); // Add this line at the top
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
@@ -10,7 +11,7 @@ module.exports = defineConfig({
   reporter: "cypress-mochawesome-reporter",
   video: true,
   e2e: {
-    baseUrl: "https://opensource-demo.orangehrmlive.com",
+    baseUrl: process.env.BASE_URL, // Update this line
     supportFile: "cypress/support/e2e.js",
     defaultCommandTimeout: 10000,
     failOnStatusCode: false, // Prevent Cypress from failing on 404

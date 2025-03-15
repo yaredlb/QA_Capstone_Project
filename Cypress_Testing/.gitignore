@@ -1,0 +1,12 @@
+# Cypress
+node_modules/
+cypress/videos/
+cypress/screenshots/
+cypress/reports/
+cypress/downloads/
+
+# Ignore environment variables
+.env
+.env.local
+.env.development
+.env.production

@@ -1,0 +1,4 @@
+# Performance Testing
+node_modules/
+*.json
+*.log
