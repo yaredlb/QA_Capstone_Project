@@ -1,9 +1,11 @@
 # Cypress
-node_modules/
 cypress/videos/
 cypress/screenshots/
 cypress/reports/
 cypress/downloads/
+
+# Ignore node_modules
+node_modules/
 
 # Ignore environment variables
 .env
