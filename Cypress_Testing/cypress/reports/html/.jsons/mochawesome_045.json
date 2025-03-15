@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-15T05:28:33.755Z",
+    "end": "2025-03-15T05:28:49.767Z",
+    "duration": 16012,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a5f6400b-1d67-46ba-a19f-32a6a63ad823",
+      "title": "",
+      "fullFile": "cypress\\e2e\\loginTest.cy.js",
+      "file": "cypress\\e2e\\loginTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ed42ee52-c393-4857-a210-4351f530c281",
+          "title": "Login Module - Data Driven Testing",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Testing Multiple Login Scenarios",
+              "fullTitle": "Login Module - Data Driven Testing Testing Multiple Login Scenarios",
+              "timedOut": null,
+              "duration": 15969,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.log(\"Starting multiple login scenarios\");\n// Load test data from fixture\ncy.fixture(\"data/test-data.xlsx\", \"binary\").then(excelFile => {\n  const workbook = XLSX.read(excelFile, {\n    type: \"binary\"\n  });\n  const sheetName = workbook.SheetNames[0];\n  const testData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);\n  testData.forEach((user, index) => {\n    cy.log(`Entering username: ${user.username}`);\n    _LoginPage.default.enterUsername(user.username);\n    cy.log(`Entering password for user: ${user.username}`);\n    _LoginPage.default.enterPassword(user.password);\n    _LoginPage.default.clickLogin();\n    let actualResult = \"\";\n    cy.log(`Checking expected result: ${user.expectedResult}`);\n    if (user.expectedResult === \"dashboard\") {\n      _LoginPage.default.verifyDashboard();\n      actualResult = \"dashboard\";\n      _LoginPage.default.logout();\n    } else if (user.expectedResult === \"Invalid credentials\") {\n      _LoginPage.default.verifyErrorMessage();\n      actualResult = \"Invalid credentials\";\n    } else if (user.expectedResult === \"Required\") {\n      _LoginPage.default.verifyRequiredFields();\n      actualResult = \"Required\";\n    }\n    // Update the testData array with the actual result\n    user.actualResult = actualResult;\n    cy.log(\"Reloading the page before the next test\");\n    cy.reload();\n    cy.wait(2000);\n  });\n  // Convert the modified testData back to sheet format\n  const newWorksheet = XLSX.utils.json_to_sheet(testData);\n  workbook.Sheets[sheetName] = newWorksheet;\n  // Write the updated Excel file\n  const newExcelFile = XLSX.write(workbook, {\n    type: \"binary\",\n    bookType: \"xlsx\"\n  });\n  // Save the file\n  cy.writeFile(\"cypress/fixtures/data/test-data.xlsx\", new Buffer.from(newExcelFile, \"binary\"), \"binary\");\n});",
+              "err": {},
+              "uuid": "093f0413-0d62-4d19-a611-d242296992a0",
+              "parentUUID": "ed42ee52-c393-4857-a210-4351f530c281",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "093f0413-0d62-4d19-a611-d242296992a0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15969,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

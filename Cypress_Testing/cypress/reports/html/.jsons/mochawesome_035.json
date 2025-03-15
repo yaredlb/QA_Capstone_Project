@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-09T00:07:39.354Z",
+    "end": "2025-03-09T00:08:17.439Z",
+    "duration": 38085,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f0529d13-a6c7-48e4-bae4-ec8fbd6ebf78",
+      "title": "",
+      "fullFile": "cypress\\e2e\\vacanciesTests.cy.js",
+      "file": "cypress\\e2e\\vacanciesTests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "11468e70-8534-407c-8d14-54a935cf5f9e",
+          "title": "Recruitment Module - Vacancies",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add and Verify New Vacancies from Excel",
+              "fullTitle": "Recruitment Module - Vacancies Add and Verify New Vacancies from Excel",
+              "timedOut": null,
+              "duration": 29903,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _readExcel.readExcel)(\"Vacancies\").then(vacancies => {\n  vacancies.forEach(vacancy => {\n    _vacanciesPage.default.clickAddVacancy();\n    _vacanciesPage.default.enterVacancyDetails(vacancy[\"vacancy\"], vacancy[\"jobTitle\"], vacancy[\"hiringManager\"]);\n    _vacanciesPage.default.clickSaveVacancy();\n    _vacanciesPage.default.verifyVacancyAdded(vacancy[\"vacancy\"]);\n  });\n});",
+              "err": {},
+              "uuid": "c593eb79-9654-4ee5-a635-9373afd242ef",
+              "parentUUID": "11468e70-8534-407c-8d14-54a935cf5f9e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Search Vacancy from Excel",
+              "fullTitle": "Recruitment Module - Vacancies Search Vacancy from Excel",
+              "timedOut": null,
+              "duration": 7651,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _readExcel.readExcel)(\"Vacancies\").then(vacancies => {\n  vacancies.forEach(vacancy => {\n    _vacanciesPage.default.searchVacancy(vacancy[\"vacancy\"]);\n    _vacanciesPage.default.verifyVacancySearchResults(vacancy[\"vacancy\"]);\n  });\n});",
+              "err": {},
+              "uuid": "5d20a256-0c3a-4621-8e3b-fe402979f4bd",
+              "parentUUID": "11468e70-8534-407c-8d14-54a935cf5f9e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c593eb79-9654-4ee5-a635-9373afd242ef",
+            "5d20a256-0c3a-4621-8e3b-fe402979f4bd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 37554,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-03-09T00:56:56.795Z",
+    "end": "2025-03-09T00:58:18.575Z",
+    "duration": 81780,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "eca28447-554f-4e10-83c5-0c837e2c8ab9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\candidatesTests.cy.js",
+      "file": "cypress\\e2e\\candidatesTests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "090c846e-0183-4bef-b899-c21fac9e10fa",
+          "title": "Recruitment Module - Candidates",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add and Verify New Candidates from Excel",
+              "fullTitle": "Recruitment Module - Candidates Add and Verify New Candidates from Excel",
+              "timedOut": null,
+              "duration": 35497,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _readExcel.readExcel)(\"Candidates\").then(candidates => {\n  if (candidates.length === 0) {\n    throw new Error(\"No candidates found in the Excel sheet.\");\n  }\n  candidates.forEach(candidate => {\n    _candidatesPage.default.clickAddCandidate();\n    _candidatesPage.default.enterCandidateDetails(candidate[\"firstName\"], candidate[\"lastName\"], candidate[\"email\"]);\n    _candidatesPage.default.clickSaveCandidate();\n  });\n});",
+              "err": {},
+              "uuid": "07e5d418-1272-40a5-b4c8-86041693eb7b",
+              "parentUUID": "090c846e-0183-4bef-b899-c21fac9e10fa",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Search Candidate from Excel",
+              "fullTitle": "Recruitment Module - Candidates Search Candidate from Excel",
+              "timedOut": null,
+              "duration": 21675,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "(0, _readExcel.readExcel)(\"Candidates\").then(candidates => {\n  candidates.forEach(candidate => {\n    _candidatesPage.default.searchCandidate(candidate[\"firstName\"]);\n    _candidatesPage.default.verifyCandidateSearchResults(candidate[\"firstName\"]);\n  });\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find content: 'Jennifer' within the element: <div.oxd-table> and with the selector: '.oxd-table-cell' but never did.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find content: 'Jennifer' within the element: <div.oxd-table> and with the selector: '.oxd-table-cell' but never did.\n    at Context.eval (webpack:///./cypress/support/candidatesPage.js:87:11)\n    at withinFn (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:133126:8)\n    at <unknown> (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:133207:16)\n    at __WEBPACK_DEFAULT_EXPORT__ (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:131149:10)\n    at Context.within (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:133193:67)\n    at wrapped (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:138835:19)",
+                "diff": null
+              },
+              "uuid": "7199c81c-5532-4f78-ab6c-fa56b1593826",
+              "parentUUID": "090c846e-0183-4bef-b899-c21fac9e10fa",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "07e5d418-1272-40a5-b4c8-86041693eb7b"
+          ],
+          "failures": [
+            "7199c81c-5532-4f78-ab6c-fa56b1593826"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 57172,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

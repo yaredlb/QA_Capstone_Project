@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-03-08T16:19:21.931Z",
+    "end": "2025-03-08T16:19:45.476Z",
+    "duration": 23545,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8757b2c1-562a-4663-9bd0-c5e941f9663f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\candidatesTests.cy.js",
+      "file": "cypress\\e2e\\candidatesTests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3da76bba-5463-4ce1-abea-404529606d9c",
+          "title": "Recruitment Module - Candidates",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add and Verify New Candidates from Excel",
+              "fullTitle": "Recruitment Module - Candidates Add and Verify New Candidates from Excel",
+              "timedOut": null,
+              "duration": 23493,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "(0, _readExcel.readExcel)(\"Candidates\").then(candidates => {\n  candidates.forEach(candidate => {\n    _candidatesPage.default.clickAddCandidate();\n    _candidatesPage.default.enterCandidateDetails(candidate[\"firstName\"], candidate[\"lastName\"], candidate[\"email\"]);\n    _candidatesPage.default.clickSaveCandidate();\n    _candidatesPage.default.verifyCandidateAdded(`${candidate[\"firstName\"]} ${candidate[\"lastName\"]}`);\n  });\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `button.oxd-button`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `button.oxd-button`, but never found it.\n    at candidatesPage.clickAddCandidate (webpack:///./cypress/support/candidatesPage.js:13:7)\n    at eval (webpack:///./cypress/e2e/candidatesTests.cy.js:18:23)\nat Array.forEach (<anonymous>)\n    at Context.eval (webpack:///./cypress/e2e/candidatesTests.cy.js:17:17)\n    at getRet (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:118322:20)\n    at tryCatcher (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:118333:66)\n    at Context.then (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:118584:21)",
+                "diff": null
+              },
+              "uuid": "fb57ccf8-cd8c-4052-89d5-fbe74ce4f004",
+              "parentUUID": "3da76bba-5463-4ce1-abea-404529606d9c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "fb57ccf8-cd8c-4052-89d5-fbe74ce4f004"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 23493,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

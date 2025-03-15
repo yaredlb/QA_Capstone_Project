@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-03-08T15:37:43.458Z",
+    "end": "2025-03-08T15:38:09.877Z",
+    "duration": 26419,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8fe8f4ce-9875-4166-a5d5-00448b3a19cd",
+      "title": "",
+      "fullFile": "cypress\\e2e\\vacanciesTests.cy.js",
+      "file": "cypress\\e2e\\vacanciesTests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "314f97f6-7fa0-4a23-838a-06216e749cb8",
+          "title": "Recruitment Module - Vacancies",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add and Verify New Vacancies from Excel",
+              "fullTitle": "Recruitment Module - Vacancies Add and Verify New Vacancies from Excel",
+              "timedOut": null,
+              "duration": 26357,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "(0, _readExcel.readExcel)(\"Vacancies\").then(vacancies => {\n  vacancies.forEach(vacancy => {\n    _vacanciesPage.default.clickAddVacancy();\n    _vacanciesPage.default.enterVacancyDetails(vacancy[\"vacancy\"], vacancy[\"jobTitle\"], vacancy[\"hiringManager\"]);\n    _vacanciesPage.default.clickSaveVacancy();\n    _vacanciesPage.default.verifyVacancyAdded(vacancy[\"vacancy\"]);\n  });\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected '[ <div.oxd-table-cell.oxd-padding-cell>, 59 more... ]' to contain text 'Senior Software Engineer', but the text was 'Automation TesterAutomaton TesterRahul PatilActiveJunior Account AssistantAccount Assistant (Deleted)ActivePayroll AdministratorPayroll AdministratorAdmin userActiveSales RepresentativeSales Representative (Deleted)ActiveSenior QA LeadQA Lead (Deleted)ActiveSenior Support SpecialistSupport Specialist (Deleted)ActiveSoftware EngineerSoftware Engineer (Deleted)ActivetecherAccount AssistantPeter AndersonClosedtestAccount AssistantRahul PatilActiveWeb DeveloperSoftware EngineerRavi BActive'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected '[ <div.oxd-table-cell.oxd-padding-cell>, 59 more... ]' to contain text 'Senior Software Engineer', but the text was 'Automation TesterAutomaton TesterRahul PatilActiveJunior Account AssistantAccount Assistant (Deleted)ActivePayroll AdministratorPayroll AdministratorAdmin userActiveSales RepresentativeSales Representative (Deleted)ActiveSenior QA LeadQA Lead (Deleted)ActiveSenior Support SpecialistSupport Specialist (Deleted)ActiveSoftware EngineerSoftware Engineer (Deleted)ActivetecherAccount AssistantPeter AndersonClosedtestAccount AssistantRahul PatilActiveWeb DeveloperSoftware EngineerRavi BActive'\n    at vacanciesPage.verifyVacancyAdded (webpack:///./cypress/support/vacanciesPage.js:62:5)\n    at eval (webpack:///./cypress/e2e/vacanciesTests.cy.js:26:22)\nat Array.forEach (<anonymous>)\n    at Context.eval (webpack:///./cypress/e2e/vacanciesTests.cy.js:18:16)\n    at getRet (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:118322:20)\n    at tryCatcher (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:118333:66)\n    at Context.then (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:118584:21)",
+                "diff": "- 'Automation TesterAutomaton TesterRahul PatilActiveJunior Account AssistantAccount Assistant (Deleted)ActivePayroll AdministratorPayroll AdministratorAdmin userActiveSales RepresentativeSales Representative (Deleted)ActiveSenior QA LeadQA Lead (Deleted)ActiveSenior Support SpecialistSupport Specialist (Deleted)ActiveSoftware EngineerSoftware Engineer (Deleted)ActivetecherAccount AssistantPeter AndersonClosedtestAccount AssistantRahul PatilActiveWeb DeveloperSoftware EngineerRavi BActive'\n+ 'Senior Software Engineer'\n"
+              },
+              "uuid": "e90af90a-27ba-40a2-84a0-fe3bfee1d20a",
+              "parentUUID": "314f97f6-7fa0-4a23-838a-06216e749cb8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "e90af90a-27ba-40a2-84a0-fe3bfee1d20a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 26357,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

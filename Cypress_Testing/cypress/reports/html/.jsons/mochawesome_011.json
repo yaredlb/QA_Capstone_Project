@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-03-08T12:08:04.989Z",
+    "end": "2025-03-08T12:08:28.443Z",
+    "duration": 23454,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f7b2a2d0-a31c-409e-9ce8-a879df1bd295",
+      "title": "",
+      "fullFile": "cypress\\e2e\\vacanciesTests.cy.js",
+      "file": "cypress\\e2e\\vacanciesTests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "eb0e2781-4b63-4bdb-bb0a-ca760cde3b2b",
+          "title": "Recruitment Module",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add and Verify New Vacancy",
+              "fullTitle": "Recruitment Module Add and Verify New Vacancy",
+              "timedOut": null,
+              "duration": 7939,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_vacanciesPage.default.clickVacancies();\n_vacanciesPage.default.clickAddVacancy();\ncy.log(\"Entering vacancy details...\");\n_vacanciesPage.default.enterVacancyDetails(\"Software Engineer\", \"Software Engineer\", \"Rahul\");\ncy.log(\"Saving vacancy...\");\n_vacanciesPage.default.clickSaveVacancy();",
+              "err": {},
+              "uuid": "0c6cdefa-6ed9-4af7-9d56-e7251dbcc23f",
+              "parentUUID": "eb0e2781-4b63-4bdb-bb0a-ca760cde3b2b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Search Vacancy",
+              "fullTitle": "Recruitment Module Search Vacancy",
+              "timedOut": null,
+              "duration": 14931,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_vacanciesPage.default.searchVacancy(\"Software Engineer\");\n_vacanciesPage.default.verifyVacancySearchResults(\"Software Engineer\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: expected '[ <div.oxd-table-cell.oxd-padding-cell>, 349 more... ]' to contain 'Software Engineer'",
+                "estack": "AssertionError: Timed out retrying after 10000ms: expected '[ <div.oxd-table-cell.oxd-padding-cell>, 349 more... ]' to contain 'Software Engineer'\n    at vacanciesPage.verifyVacancySearchResults (webpack:///./cypress/support/vacanciesPage.js:59:30)\n    at Context.eval (webpack:///./cypress/e2e/vacanciesTests.cy.js:32:18)",
+                "diff": null
+              },
+              "uuid": "36290632-2134-4cb2-a4ef-39d5ae1467f6",
+              "parentUUID": "eb0e2781-4b63-4bdb-bb0a-ca760cde3b2b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0c6cdefa-6ed9-4af7-9d56-e7251dbcc23f"
+          ],
+          "failures": [
+            "36290632-2134-4cb2-a4ef-39d5ae1467f6"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 22870,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

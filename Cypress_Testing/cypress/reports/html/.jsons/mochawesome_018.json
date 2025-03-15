@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-03-08T15:31:00.915Z",
+    "end": "2025-03-08T15:31:26.509Z",
+    "duration": 25594,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ea434b64-eca6-445b-976c-5ce9755b1d92",
+      "title": "",
+      "fullFile": "cypress\\e2e\\vacanciesTests.cy.js",
+      "file": "cypress\\e2e\\vacanciesTests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "09f1168a-cd58-44b0-9b30-679b4c9299c9",
+          "title": "Recruitment Module - Vacancies",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add and Verify New Vacancies from Excel",
+              "fullTitle": "Recruitment Module - Vacancies Add and Verify New Vacancies from Excel",
+              "timedOut": null,
+              "duration": 25555,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "(0, _readExcel.readExcel)(\"Vacancies\").then(vacancies => {\n  vacancies.forEach(vacancy => {\n    _vacanciesPage.default.clickAddVacancy();\n    _vacanciesPage.default.enterVacancyDetails(vacancy[\"vacancy\"], vacancy[\"jobTitle\"], vacancy[\"hiringManager\"]);\n    _vacanciesPage.default.clickSaveVacancy();\n    _vacanciesPage.default.verifyVacancyAdded(vacancy[\"vacancy\"]);\n  });\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.oxd-table-cell`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.oxd-table-cell`, but never found it.\n    at vacanciesPage.verifyVacancyAdded (webpack:///./cypress/support/vacanciesPage.js:52:7)\n    at eval (webpack:///./cypress/e2e/vacanciesTests.cy.js:26:22)\nat Array.forEach (<anonymous>)\n    at Context.eval (webpack:///./cypress/e2e/vacanciesTests.cy.js:18:16)\n    at getRet (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:118322:20)\n    at tryCatcher (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:118333:66)\n    at Context.then (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:118584:21)",
+                "diff": null
+              },
+              "uuid": "8e690841-3fcb-497e-914b-bb8c8348e1ca",
+              "parentUUID": "09f1168a-cd58-44b0-9b30-679b4c9299c9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "8e690841-3fcb-497e-914b-bb8c8348e1ca"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 25555,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

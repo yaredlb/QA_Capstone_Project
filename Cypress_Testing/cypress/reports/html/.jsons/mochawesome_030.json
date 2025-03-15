@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-08T22:46:24.499Z",
+    "end": "2025-03-08T22:47:57.715Z",
+    "duration": 93216,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9aaafb85-9f9f-4b99-ba91-141ccb68d599",
+      "title": "",
+      "fullFile": "cypress\\e2e\\candidatesTests.cy.js",
+      "file": "cypress\\e2e\\candidatesTests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3c43ec88-f6ee-4a7f-bc9f-3c0c61b42c6a",
+          "title": "Recruitment Module - Candidates",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add and Verify New Candidates from Excel",
+              "fullTitle": "Recruitment Module - Candidates Add and Verify New Candidates from Excel",
+              "timedOut": null,
+              "duration": 79152,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _readExcel.readExcel)(\"Candidates\").then(candidates => {\n  if (candidates.length === 0) {\n    throw new Error(\"No candidates found in the Excel sheet.\");\n  }\n  candidates.forEach(candidate => {\n    _candidatesPage.default.clickAddCandidate();\n    _candidatesPage.default.enterCandidateDetails(candidate[\"firstName\"], candidate[\"lastName\"], candidate[\"email\"]);\n    _candidatesPage.default.clickSaveCandidate();\n    // candidatesPage.verifyCandidateAdded(\n    //   `${candidate[\"firstName\"]} ${candidate[\"lastName\"]}`\n    // );\n  });\n});",
+              "err": {},
+              "uuid": "4e579ebe-abaf-43e6-bf8b-c0275fb0b17d",
+              "parentUUID": "3c43ec88-f6ee-4a7f-bc9f-3c0c61b42c6a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Search Candidate from Excel",
+              "fullTitle": "Recruitment Module - Candidates Search Candidate from Excel",
+              "timedOut": null,
+              "duration": 12379,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _readExcel.readExcel)(\"Candidates\").then(candidates => {\n  candidates.forEach(candidate => {\n    _candidatesPage.default.searchCandidate(candidate[\"firstName\"]);\n    _candidatesPage.default.verifyCandidateSearchResults(candidate[\"firstName\"]);\n  });\n});",
+              "err": {},
+              "uuid": "1e425919-d682-41be-b34d-ec8792b8f118",
+              "parentUUID": "3c43ec88-f6ee-4a7f-bc9f-3c0c61b42c6a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4e579ebe-abaf-43e6-bf8b-c0275fb0b17d",
+            "1e425919-d682-41be-b34d-ec8792b8f118"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 91531,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

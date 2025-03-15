@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-03-08T17:14:39.952Z",
+    "end": "2025-03-08T17:15:05.358Z",
+    "duration": 25406,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b0f2cca6-2d9d-4c32-9b1a-b37e85937bbd",
+      "title": "",
+      "fullFile": "cypress\\e2e\\candidatesTests.cy.js",
+      "file": "cypress\\e2e\\candidatesTests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0f81895a-fbb3-4a38-830c-d75a6ed7561b",
+          "title": "Recruitment Module - Candidates",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add and Verify New Candidates from Excel",
+              "fullTitle": "Recruitment Module - Candidates Add and Verify New Candidates from Excel",
+              "timedOut": null,
+              "duration": 25297,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "(0, _readExcel.readExcel)(\"Candidates\").then(candidates => {\n  if (candidates.length === 0) {\n    throw new Error(\"No candidates found in the Excel sheet.\");\n  }\n  candidates.forEach(candidate => {\n    _candidatesPage.default.clickAddCandidate();\n    _candidatesPage.default.enterCandidateDetails(candidate[\"firstName\"], candidate[\"lastName\"], candidate[\"email\"]);\n    _candidatesPage.default.clickSaveCandidate();\n    _candidatesPage.default.verifyCandidateAdded(`${candidate[\"firstName\"]} ${candidate[\"lastName\"]}`);\n  });\n});",
+              "err": {
+                "message": "CypressError: Timed out retrying after 10000ms: `cy.contains()` failed because it requires a DOM element, window or document.\n\nNo elements in the current DOM matched your query:\n\n  > cy.get(button.oxd-button, [object Object])",
+                "estack": "CypressError: Timed out retrying after 10000ms: `cy.contains()` failed because it requires a DOM element, window or document.\n\nNo elements in the current DOM matched your query:\n\n  > cy.get(button.oxd-button, [object Object])\n    at isElement (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:145720:62)\n    at validateType (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:145578:14)\n    at Object.isType (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:145609:7)\n    at <unknown> (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:132835:22)\n    at Object.subjectFn (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:144612:16)\n    at $Cy.verifyUpcomingAssertions (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:143952:31)\n    at onRetry (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:144603:15)\n    at tryCatcher (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:144490:68)\n    at <unknown> (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:144431:14)\n    at tryCatcher (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at candidatesPage.clickSaveCandidate (webpack:///./cypress/support/candidatesPage.js:57:7)\n    at eval (webpack:///./cypress/e2e/candidatesTests.cy.js:28:23)\nat Array.forEach (<anonymous>)\n    at Context.eval (webpack:///./cypress/e2e/candidatesTests.cy.js:21:17)\n    at getRet (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:118322:20)\n    at tryCatcher (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:118333:66)\n    at Context.then (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:118584:21)",
+                "diff": null
+              },
+              "uuid": "d932a5bd-0d28-40aa-a4e7-1c8d31c3f17a",
+              "parentUUID": "0f81895a-fbb3-4a38-830c-d75a6ed7561b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d932a5bd-0d28-40aa-a4e7-1c8d31c3f17a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 25297,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

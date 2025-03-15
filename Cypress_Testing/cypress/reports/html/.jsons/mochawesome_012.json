@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-08T12:12:29.381Z",
+    "end": "2025-03-08T12:12:47.253Z",
+    "duration": 17872,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5c7d8f54-f054-4414-be65-258b946f2cfa",
+      "title": "",
+      "fullFile": "cypress\\e2e\\candidatesTests.cy.js",
+      "file": "cypress\\e2e\\candidatesTests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f3647a5d-b0e2-4a59-9083-1b453e249ee9",
+          "title": "Recruitment Module",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add and Verify New Candidate",
+              "fullTitle": "Recruitment Module Add and Verify New Candidate",
+              "timedOut": null,
+              "duration": 11894,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_candidatesPage.default.clickAddCandidate();\n_candidatesPage.default.enterCandidateDetails(\"John\", \"Doe\", \"john.doe@domain.com\");\n_candidatesPage.default.clickSaveCandidate();\n_candidatesPage.default.verifyCandidateAdded(\"John Doe\");",
+              "err": {},
+              "uuid": "e32f3d05-54de-4851-9f28-4cb571cceea4",
+              "parentUUID": "f3647a5d-b0e2-4a59-9083-1b453e249ee9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Search Candidate",
+              "fullTitle": "Recruitment Module Search Candidate",
+              "timedOut": null,
+              "duration": 5464,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_candidatesPage.default.searchCandidate(\"John\");\n_candidatesPage.default.verifyCandidateSearchResults(\"John\");",
+              "err": {},
+              "uuid": "1d515938-f370-4644-a886-02fcae083b72",
+              "parentUUID": "f3647a5d-b0e2-4a59-9083-1b453e249ee9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e32f3d05-54de-4851-9f28-4cb571cceea4",
+            "1d515938-f370-4644-a886-02fcae083b72"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17358,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
